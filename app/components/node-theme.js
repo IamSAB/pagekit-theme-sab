@@ -64,23 +64,7 @@ const SectionFoot = {
 
 module.exports = {
 
-    extends: require('CORE/NodeThemeUI.vue'),
-
-    section: {
-        label: 'Theme',
-        priority: 90
-    },
-
-    props: {
-        node: {
-            type: Object,
-            required: true
-        }
-    },
-
-    created () {
-        this.sorting = ['Head','Top','Main','Bottom','Foot'];
-    },
+    extends: require('CORE/NodeTheme.vue'),
 
     components: {
         SectionTopA,

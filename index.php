@@ -1,6 +1,8 @@
 <?php
 
+use Pagekit\Application;
 use SAB\Extension\Theme\Helper\ThemeHelper;
+use SAB\Extension\Theme\Helper\ThemeConfigurator;
 
 return [
 
@@ -13,22 +15,21 @@ return [
         'footer' => 'Footer'
     ],
 
-    'positions' => [
-        'hero' => 'Hero',
-        'TopA' => 'Top A',
-        'TopB' => 'Top B',
-        'Sidebar' => 'Sidebar',
-        'MainTop' => 'Main Top',
-        'MainBottom' => 'Main Bottom',
-        'BottomA' => 'Bottom A',
-        'BottomB' => 'Bottom B',
-        'Foot' => 'Footer'
-    ],
-
-    'config' => [
-        'logo_inverse' => '',
-        'css' => ''
-    ],
+    'main' => function (Application $app) {
+        $c = new ThemeConfigurator($this);
+        $c->addPositions([
+            'TopA' => 'Top A',
+            'TopB' => 'Top B',
+            'Sidebar' => ['Sidebar', false],
+            'MainTop' => 'Main Top',
+            'MainBottom' => 'Main Bottom',
+            'BottomA' => 'Bottom A',
+            'BottomB' => 'Bottom B',
+            'Foot' => 'Footer'
+        ]);
+        $c->addSectionOptions(['TopA','TopB','Main','BottomA','BottomB','Foot']);
+        $c->addWidgetOption();
+    },
 
     'events' => [
 

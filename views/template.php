@@ -18,6 +18,8 @@
 
         <div class="uk-offcanvas-content">
 
+            <?= $view->tm()->navbar($view->tm()->custom('navbar.php')) ?>
+
             <?php if ($view->position()->exists('TopA')): ?>
                 <?= $view->tm()->section('TopA', $view->tm()->position('TopA')) ?>
             <?php endif; ?>

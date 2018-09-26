@@ -4,7 +4,7 @@ module.exports = [
 
     {
         entry: {
-            //"SiteSettingTheme": "./app/components/SiteSettingTheme.vue",
+            "site-theme": "./app/components/site-theme",
             "node-theme": "./app/components/node-theme",
             "widget-theme": "./app/components/widget-theme",
             "uikit": "./app/uikit.js"

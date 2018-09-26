@@ -1,8 +1,6 @@
 <?php
 
-use Pagekit\Application;
-use SAB\Extension\Theme\Helper\ThemeHelper;
-use SAB\Extension\Theme\Helper\ThemeConfigurator;
+use Pagekit\Application as App;
 
 return [
 
@@ -10,46 +8,73 @@ return [
 
     'require' => 'theme-core',
 
-    'menus' => [
-        'main' => 'Main',
-        'footer' => 'Footer'
-    ],
+    'main' => 'SAB\\Extension\\Theme\\ThemeModule',
 
-    'main' => function (Application $app) {
-        $c = new ThemeConfigurator($this);
-        $c->addPositions([
-            'TopA' => 'Top A',
-            'TopB' => 'Top B',
-            'Sidebar' => ['Sidebar', false],
-            'MainTop' => 'Main Top',
-            'MainBottom' => 'Main Bottom',
-            'BottomA' => 'Bottom A',
-            'BottomB' => 'Bottom B',
-            'Foot' => 'Footer'
-        ]);
-        $c->addSectionOptions(['TopA','TopB','Main','BottomA','BottomB','Foot']);
-        $c->addWidgetOption();
-    },
-
-    'events' => [
-
-        'view.init' => function ($event, $view) use ($app) {
-            $view->addHelper(new ThemeHelper());
-        },
-
-        // 'view.system/site/admin/settings' => function ($event, $view) use ($app) {
-        //     $view->script('site-setting-theme', 'theme:app/bundle/SiteSettingTheme.js', 'site-settings');
-        //     $view->data('$theme', $this);
-        // },
-
-        'view.system/site/admin/edit' => function ($event, $view) {
-            $view->script('site-node-theme', 'theme:app/bundle/node-theme.js', 'site-edit');
-        },
-
-        'view.system/widget/edit' => function ($event, $view) {
-            $view->script('site-widget-theme', 'theme:app/bundle/widget-theme.js', 'widget-edit');
-        }
-
-    ],
+    'theme' => [
+        'menus' => [
+            'navbarnav' => [
+                'main' => [
+                    'title' => 'Main menu',
+                    'path' => 'top',
+                ],
+            ],
+            'subnav' => [
+                'foot' => [
+                    'title' => 'Footer menu',
+                    'path' => 'foot',
+                ]
+            ]
+        ],
+        'positions' => [
+            'grid' => [
+                'top' => [
+                    'title' => 'Top',
+                    'path' => 'top'
+                ],
+                'mainTop' => [
+                    'title' => 'Main Top',
+                    'path' => 'main/top',
+                ],
+                'mainBottom' => [
+                    'title' => 'Main Bottom',
+                    'path' => 'main/bottom',
+                ],
+                'bottom' => [
+                    'title' => 'Bottom',
+                    'path' => 'bottom',
+                ],
+                'footer' => [
+                    'title' => 'Footer',
+                    'path' => 'foot',
+                ],
+            ],
+            'sidebar' => [
+                'sidebar' => [
+                    'title' => 'Sidebar',
+                    'path' => 'main/sidebar',
+                ],
+            ]
+        ],
+        'node' => [
+            'segment' => [
+                'top' => [
+                    'title' => 'Top',
+                    'path' => 'top',
+                ],
+                'main' => [
+                    'title' => 'Main',
+                    'path' => 'main',
+                ],
+                'bottom' => [
+                    'title' => 'Bottom',
+                    'path' => 'bottom',
+                ],
+                'foot' => [
+                    'title' => 'Footer',
+                    'path' => 'foot',
+                ],
+            ]
+        ],
+    ]
 
 ];

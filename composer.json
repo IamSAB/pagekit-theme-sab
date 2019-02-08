@@ -1,15 +1,13 @@
 {
-    "name": "sab/theme-sab",
+    "name": "sab-theme",
     "type": "pagekit-theme",
     "version": "0.1.0",
-    "title": "SAB",
-    "description": "UIkit 3 theme using theme extension",
+    "title": "SAB Theme",
+    "description": "Theme using theme kit",
     "license": "MIT",
     "authors": [
         {
-            "name": "SAB",
-            "email": "info@simb.ch",
-            "homepage": "http://simb.ch"
+            "name": "SAB"
         }
     ],
     "archive": {

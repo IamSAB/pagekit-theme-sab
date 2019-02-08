@@ -1,26 +1,30 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = [
 
     {
+        mode: 'development',
+
         entry: {
-            "site-theme": "./app/components/site-theme",
-            "node-theme": "./app/components/node-theme",
-            "widget-theme": "./app/components/widget-theme",
-            "uikit": "./app/uikit.js"
+            "theme": "./app/js/theme.js"
         },
+
         output: {
+            path: path.resolve(__dirname, "./"),
             filename: "./app/bundle/[name].js"
         },
+
         module: {
-            loaders: [
-                { test: /\.vue$/, loader: "vue" }
+            rules: [
+                {
+                    test: /\.js$/,
+                    use: 'babel-loader'
+                },
+                {
+                    test: /\.svg$/,
+                    loader: 'svg-inline-loader'
+                }
             ]
-        },
-        resolve: {
-            alias: {
-              CORE: path.resolve(__dirname, '../../sab/pagekit-extension-theme/app/components')
-            }
         }
     }
 

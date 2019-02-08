@@ -1,80 +1,56 @@
 <?php
 
-use Pagekit\Application as App;
-
 return [
 
-    'name' => 'theme-sab',
+    'name' => 'sab-theme',
 
-    'require' => 'theme-core',
+    'require' => 'theme-kit',
 
-    'main' => 'SAB\\Extension\\Theme\\ThemeModule',
+    'menus' => [
+        'main' => 'Main'
+    ],
 
-    'theme' => [
-        'menus' => [
-            'navbarnav' => [
-                'main' => [
-                    'title' => 'Main menu',
-                    'path' => 'top',
-                ],
-            ],
-            'subnav' => [
-                'foot' => [
-                    'title' => 'Footer menu',
-                    'path' => 'foot',
-                ]
-            ]
+    'positions' => [
+        'top' => 'Top',
+        'bottom' => 'Bottom'
+    ],
+
+    'node-theme' => [
+        'nav' => [
+            'label' => 'Nav',
+            'categories' => ['Top'],
+            'fieldsets' => ['nav']
         ],
-        'positions' => [
-            'grid' => [
-                'top' => [
-                    'title' => 'Top',
-                    'path' => 'top'
-                ],
-                'mainTop' => [
-                    'title' => 'Main Top',
-                    'path' => 'main/top',
-                ],
-                'mainBottom' => [
-                    'title' => 'Main Bottom',
-                    'path' => 'main/bottom',
-                ],
-                'bottom' => [
-                    'title' => 'Bottom',
-                    'path' => 'bottom',
-                ],
-                'footer' => [
-                    'title' => 'Footer',
-                    'path' => 'foot',
-                ],
-            ],
-            'sidebar' => [
-                'sidebar' => [
-                    'title' => 'Sidebar',
-                    'path' => 'main/sidebar',
-                ],
-            ]
+        'top' => [
+            'label' => 'Top',
+            'categories' => ['Top', 'Position'],
+            'fieldsets' => ['section', 'background', 'media', 'container', 'grid']
         ],
-        'node' => [
-            'segment' => [
-                'top' => [
-                    'title' => 'Top',
-                    'path' => 'top',
-                ],
-                'main' => [
-                    'title' => 'Main',
-                    'path' => 'main',
-                ],
-                'bottom' => [
-                    'title' => 'Bottom',
-                    'path' => 'bottom',
-                ],
-                'foot' => [
-                    'title' => 'Footer',
-                    'path' => 'foot',
-                ],
-            ]
+        'main' => [
+            'label' => 'Main',
+            'categories' => ['Content'],
+            'fieldsets' => ['section', 'background', 'container']
         ],
+        'bottom' => [
+            'label' => 'Bottom',
+            'categories' => ['Bottom', 'Position'],
+            'fieldsets' => ['section', 'background', 'container', 'grid']
+        ]
+    ],
+
+    'widget-theme' => [
+        'grid' => [
+            'label' => 'Grid',
+            'fieldsets' => ['gridItem']
+        ],
+        'alignment' => [
+            'label' => 'Alignment',
+            'fieldsets' => ['text']
+        ],
+        'content' => [
+            'label' => 'Content',
+            'fieldsets' => ['card', 'heading']
+        ]
     ]
 
 ];

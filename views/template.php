@@ -13,24 +13,52 @@
 
     <body id="top">
 
-        <div class="uk-navbar-container">
-            <div class="uk-container">
-                <div uk-navbar>
-                    <?= $view->menu('main', 'theme-kit/navbar-nav-center-split.php', ['content' => 'Hey, there!']) ?>
-                </div>
-            </div>
-        </div>
+        <?= $view->render('theme-kit/navbar.php', [
+            'form' => 'navbar',
+            'content' => $view->render('views:navbar-content.php')
+        ]) ?>
 
+        <?= $view->render('theme-kit/offcanvas.php', [
+            'id' => 'offcanvas',
+            'form' => 'menu',
+            'content' => $view->menu('offcanvas', 'views:offcanvas-content.php', [
+                'form' => 'menu'
+            ])
+        ]) ?>
+
+        <?php if ($view->position()->exists('cover')): ?>
+        <?= $view->render('theme-kit/cover.php',[
+            'form' => 'cover',
+            'content' => $view->position('cover', 'theme-kit/position-cover.php')
+            ]) ?>
+        <?php endif ?>
+
+        <?php if ($view->position()->exists('top')): ?>
         <?= $view->render('theme-kit/section.php',[
             'form' => 'top',
-            'content' => $view->position('top', 'views:theme-kit/position-grid.php', ['form' => 'top'])
+            'content' => $view->position('top', 'theme-kit/position-grid.php', ['form' => 'top'])
+            ]) ?>
+        <?php endif ?>
+
+
+        <?= $view->render('theme-kit/section.php',[
+            'form' => 'main',
+            'content' => $view->render('views:main-content.php')
             ]) ?>
 
-        <div <?= $view->values('main.section','uk-section') ?>>
-            <div <?= $view->values('main.container','uk-container') ?>>
-                <?= $view->render('content') ?>
-            </div>
-        </div>
+        <?php if ($view->position()->exists('bottom')): ?>
+        <?= $view->render('theme-kit/section.php',[
+            'form' => 'bottom',
+            'content' => $view->position('bottom', 'theme-kit/position-grid.php', ['form' => 'bottom'])
+            ]) ?>
+        <?php endif ?>
+
+        <?php if ($view->position()->exists('foot')): ?>
+        <?= $view->render('theme-kit/section.php',[
+            'form' => 'foot',
+            'content' => $view->render('views:foot-content.php')
+            ]) ?>
+        <?php endif ?>
 
     </body>
 

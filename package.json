@@ -3,7 +3,8 @@
   "scripts": {
     "archive": "webpack -p && composer archive --format=zip",
     "wp": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "gulp": "gulp"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -11,7 +12,12 @@
     "babel-loader": "^8.0.5",
     "svg-inline-loader": "^0.8.0",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "gulp": "^3.8.10",
+    "gulp-header": "^1.2.2",
+    "gulp-less": "^3.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-util": "^3.0.4"
   },
   "dependencies": {
     "uikit": "^3.0.3"

@@ -1,0 +1,20 @@
+{
+    "label": "Footer",
+    "fields": {
+        "content": {
+            "label": "Content",
+            "type": "editor",
+            "default": ""
+        },
+        "copyright": {
+            "label": "Copyright",
+            "type": "text",
+            "default": ""
+        },
+        "totop": {
+            "label": "To Top",
+            "type": "checkbox",
+            "default": true
+        }
+    }
+}

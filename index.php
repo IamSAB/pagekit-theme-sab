@@ -8,7 +8,9 @@ return [
 
     'menus' => [
         'main' => 'Main',
-        'offcanvas' => 'Offcanvas'
+        'offcanvas' => 'Offcanvas',
+        'sidebar' => 'Sidebar',
+        'footer' => 'Footer'
     ],
 
     'positions' => [
@@ -16,45 +18,74 @@ return [
         'offcanvas' => 'Offcanvas',
         'cover' => 'Cover',
         'top' => 'Top',
+        'outerMainTop' => 'Outer Main Top',
+        'innerMainTop' => 'Inner Main Top',
+        'innerMainBottom' => 'Inner Main Bottom',
+        'outerMainBottom' => 'Outer Main Bottom',
         'sidebar' => 'Sidebar',
         'bottom' => 'Bottom'
     ],
 
     'node-theme' => [
-        'node' => [
-            'label' => 'Node',
-            'categories' => ['Navigation'],
-            'fieldsets' => ['node']
-        ],
         'offcanvas' => [
             'label' => 'Offcanvas',
-            'categories' => ['Navigation', 'Position'],
-            'fieldsets' => ['ukOffcanvas', 'menu']
+            'categories' => ['Site', 'Position', 'Menu'],
+            'fieldsets' => ['offcanvas', 'nav']
         ],
         'navbar' => [
             'label' => 'Navbar',
-            'categories' => ['Navigation'],
-            'fieldsets' => ['ukNavbar', 'container']
+            'categories' => ['Site', 'Menu'],
+            'fieldsets' => ['navbar', 'sticky']
         ],
         'cover' => [
             'label' => 'Cover',
             'categories' => ['Position'],
-            'fieldsets' => ['cover', 'ukHeightViewport']
+            'fieldsets' => ['cover']
         ],
         'top' => [
             'label' => 'Top',
             'categories' => ['Position'],
-            'fieldsets' => ['section', 'background', 'ukHeightViewport', 'container', 'grid']
+            'fieldsets' => ['section', 'background', 'container', 'grid']
+        ],
+        'outerMainTop' => [
+            'label' => 'Outer Main Top',
+            'categories' => ['Position'],
+            'fieldsets' => ['grid']
+        ],
+        'innerMainTop' => [
+            'label' => 'Inner Main Top',
+            'categories' => ['Position'],
+            'fieldsets' => ['grid']
         ],
         'main' => [
             'label' => 'Main',
-            'categories' => ['Position', 'Content'],
-            'fieldsets' => ['section', 'background', 'container', 'sidebar']
+            'categories' => ['Site', 'Menu'],
+            'fieldsets' => ['section', 'background', 'container', 'nav']
+        ],
+        'sidebar' => [
+            'label' => 'Sidebar',
+            'categories' => ['Site', 'Position', 'Menu'],
+            'fieldsets' => ['nav', 'sidebar', 'sticky']
+        ],
+        'innerMainBottom' => [
+            'label' => 'Inner Main Bottom',
+            'categories' => ['Position'],
+            'fieldsets' => ['grid']
+        ],
+        'outerMainBottom' => [
+            'label' => 'Outer Main Bottom',
+            'categories' => ['Position'],
+            'fieldsets' => ['grid']
         ],
         'bottom' => [
             'label' => 'Bottom',
             'categories' => ['Position'],
-            'fieldsets' => ['section', 'background', 'ukHeightViewport', 'container', 'grid']
+            'fieldsets' => ['section', 'background', 'container', 'grid']
+        ],
+        'footer' => [
+            'label' => 'Footer',
+            'categories' => ['Site'],
+            'fieldsets' => ['footer', 'subnav']
         ]
     ],
 
@@ -91,9 +122,15 @@ return [
     'settings-theme' => [
         'defaults' => [
             'label' => 'Defaults',
-            'fieldsets' => [
-                'container', 'background', 'section', 'card'
-            ]
+            'fieldsets' => ['container', 'grid', 'card', 'sidebar', 'background']
+        ],
+        'top' => [
+            'label' => 'Defaults Top',
+            'fieldsets' => ['section']
+        ],
+        'bottom' => [
+            'label' => 'Defaults Bottom',
+            'fieldsets' => ['section']
         ]
     ]
 

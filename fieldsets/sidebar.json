@@ -1,0 +1,31 @@
+{
+    "label": "Sidebar",
+    "fields": {
+        "width": {
+            "label": "Width",
+            "default": "uk-width-1-4",
+            "type": "select",
+            "options": {
+                "- Select -": "",
+                "1-6": "uk-width-1-6",
+                "1-5": "uk-width-1-5",
+                "1-4": "uk-width-1-4",
+                "1-3": "uk-width-1-3",
+                "1-2": "uk-width-1-2",
+                "1-1": "uk-width-1-1"
+            },
+            "responsive": ["@s", "@m", "@l", "@xl"]
+        },
+        "position": {
+            "label": "Sidebar position",
+            "default": "uk-flex-first",
+            "type": "select",
+            "options": {
+                "- Select -": "",
+                "Left": "uk-flex-first",
+                "Right": "uk-flex-last"
+            },
+            "responsive": ["@s", "@m", "@l", "@xl"]
+        }
+    }
+}

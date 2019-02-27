@@ -1,5 +1,5 @@
 <?php if ($view->position()->exists('outerMainTop')): ?>
-<?= $view->position('outerMainTop', 'theme-kit/position/grid-card.php', ['form' => 'outerMainTop']) ?>
+<?= $view->position('outerMainTop', 'theme-kit/position/grid.php', ['form' => 'outerMainTop']) ?>
 <?php endif ?>
 
 <div uk-grid>
@@ -20,7 +20,7 @@
     <main class="uk-width-expand" uk-height-viewport="expand: true" uk-grid>
 
         <?php if ($view->position()->exists('innerMainTop')): ?>
-        <?= $view->position('innerMainTop', 'theme-kit/position/grid-card.php', ['form' => 'innerMainTop']) ?>
+        <?= $view->position('innerMainTop', 'theme-kit/position/grid.php', ['form' => 'innerMainTop']) ?>
         <?php endif ?>
 
         <div>
@@ -28,7 +28,7 @@
         </div>
 
         <?php if ($view->position()->exists('innerMainBottom')): ?>
-        <?= $view->position('innerMainBottom', 'theme-kit/position/grid-card.php', ['form' => 'innerMainBottom']) ?>
+        <?= $view->position('innerMainBottom', 'theme-kit/position/grid.php', ['form' => 'innerMainBottom']) ?>
         <?php endif ?>
 
     </main>
@@ -36,5 +36,5 @@
 </div>
 
 <?php if ($view->position()->exists('outerMainBottom')): ?>
-<?= $view->position('outerMainBottom', 'theme-kit/position/grid-card.php', ['form' => 'outerMainBottom']) ?>
+<?= $view->position('outerMainBottom', 'theme-kit/position/grid.php', ['form' => 'outerMainBottom']) ?>
 <?php endif ?>

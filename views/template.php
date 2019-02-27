@@ -16,19 +16,33 @@
         <?php if ($view->position()->exists('cover')): ?>
             <?= $view->render('theme-kit/cover.php',[
                 'form' => 'cover',
-                'content' => $view->render('views:navbar-transparent.php') . $view->position('cover', 'theme-kit/position/cover.php')
+                'content' => $view->render('views:navbar-transparent.php') . $view->position('cover', 'theme-kit/position/cover.php', ['form' => 'cover'])
             ]); ?>
         <?php else: ?>
             <?= $view->render('views:navbar.php') ?>
         <?php endif ?>
 
+        <?php if ($view->position()->exists('slideshow')): ?>
+        <?= $view->position('slideshow', 'theme-kit/position/slideshow.php', ['form' => 'slideshow']) ?>
+        <?php endif ?>
+
         <?php if ($view->position()->exists('top')): ?>
         <?= $view->render('theme-kit/section.php',[
             'form' => 'top',
-            'content' => $view->position('top', 'theme-kit/position/grid-card.php', ['form' => 'top'])
+            'content' => $view->position('top', 'theme-kit/position/grid.php', ['form' => 'top'])
             ]) ?>
         <?php endif ?>
 
+        <?php if ($view->position()->exists('tiles')): ?>
+        <?= $view->position('tiles', 'theme-kit/position/tiles.php', ['form' => 'tiles']) ?>
+        <?php endif ?>
+
+        <?php if ($view->position()->exists('masonry')): ?>
+        <?= $view->render('theme-kit/section.php',[
+            'form' => 'masonry',
+            'content' => $view->position('masonry', 'theme-kit/position/masonry.php', ['form' => 'masonry'])
+            ]) ?>
+        <?php endif ?>
 
         <?= $view->render('theme-kit/section.php',[
             'form' => 'main',
@@ -38,7 +52,7 @@
         <?php if ($view->position()->exists('bottom')): ?>
         <?= $view->render('theme-kit/section.php',[
             'form' => 'bottom',
-            'content' => $view->position('bottom', 'theme-kit/position/grid-card.php', ['form' => 'bottom'])
+            'content' => $view->position('bottom', 'theme-kit/position/grid.php', ['form' => 'bottom'])
             ]) ?>
         <?php endif ?>
 

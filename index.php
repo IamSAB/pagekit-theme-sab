@@ -17,7 +17,10 @@ return [
         'navbar' => 'Navbar',
         'offcanvas' => 'Offcanvas',
         'cover' => 'Cover',
+        'slideshow' => 'Slideshow',
         'top' => 'Top',
+        'masonry' => 'Masonry',
+        'tiles' => 'Tiles',
         'outerMainTop' => 'Outer Main Top',
         'innerMainTop' => 'Inner Main Top',
         'innerMainBottom' => 'Inner Main Bottom',
@@ -42,10 +45,25 @@ return [
             'categories' => ['Position'],
             'fieldsets' => ['cover']
         ],
+        'slideshow' => [
+            'label' => 'Slideshow',
+            'categories' => ['Position'],
+            'fieldsets' => ['slideshow']
+        ],
+        'masonry' => [
+            'label' => 'Masonry',
+            'categories' => ['Position'],
+            'fieldsets' => ['section', 'background', 'container', 'masonry']
+        ],
         'top' => [
             'label' => 'Top',
             'categories' => ['Position'],
             'fieldsets' => ['section', 'background', 'container', 'grid']
+        ],
+        'tiles' => [
+            'label' => 'Tiles',
+            'categories' => ['Position'],
+            'fieldsets' => ['tiles']
         ],
         'outerMainTop' => [
             'label' => 'Outer Main Top',
@@ -59,8 +77,8 @@ return [
         ],
         'main' => [
             'label' => 'Main',
-            'categories' => ['Site', 'Menu'],
-            'fieldsets' => ['section', 'background', 'container', 'nav']
+            'categories' => ['Site'],
+            'fieldsets' => ['section', 'background', 'container']
         ],
         'sidebar' => [
             'label' => 'Sidebar',
@@ -92,30 +110,33 @@ return [
     'widget-theme' => [
         'grid' => [
             'label' => 'Grid',
-            'positions' => ['top', 'bottom'],
-            'fieldsets' => ['gridItem']
+            'positions' => ['top', 'bottom', 'outerTop', 'innerTop', 'innerBottom', 'outerBottom'],
+            'fieldsets' => ['gridItem', 'card']
+        ],
+        'tiles' => [
+            'label' => 'Tile',
+            'positions' => ['tiles'],
+            'fieldsets' => ['tile', 'background']
+        ],
+        'slideshow' => [
+            'label' => 'Slideshow',
+            'positions' => ['slideshow'],
+            'fieldsets' => ['slideshowItem', 'overlay', 'position']
+        ],
+        'masonry' => [
+            'label' => 'Masonry',
+            'positions' => ['masonry'],
+            'fieldsets' => ['masonryItem', 'card']
         ],
         'cover' => [
-            'label' => 'Position',
+            'label' => 'Cover',
             'positions' => ['cover'],
-            'fieldsets' => ['position']
+            'fieldsets' => ['overlay', 'position']
         ],
-        'alignment' => [
-            'label' => 'Alignment',
-            'fieldsets' => ['text']
-        ],
-        'visibility' => [
-            'label' => 'Visibility',
-            'fieldsets' => ['visibility']
-        ],
-        'menu' => [
+        'system' => [
             'label' => 'Menu',
             'types' => ['system/menu'],
             'fieldsets' => ['menu']
-        ],
-        'content' => [
-            'label' => 'Content',
-            'fieldsets' => ['card', 'heading']
         ]
     ],
 
